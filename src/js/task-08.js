@@ -1,12 +1,15 @@
-const emEl = mail.length;
-const passEl = password.length;
-if (emEl === 0) {console.log("Все поля должны быть заполнены!"); }
-else if (passEl === 0) {console.log("Все поля должны быть заполнены!"); }
+const input = document.querySelector('.js-intut');
+input.addEventListener('input', onInputChange);
+function onInputChange(event) {
+    console.log(event.currentTarget.value);
+    const changeInput = event.currentTarget.value;
+}
+if (changeInput="") {console.log("Все поля должны быть заполнены!"); }
     else {
-        const form = document.querySelector(".js-register-form");
-        form.addEventListener("submit", onFormSubmit);
+        const form = document.querySelector('.js-register-form');
+        form.addEventListener('submit', onFormSubmit);
         function onFormSubmit(event) {
-            event.preventPefaut();
+            event.preventDefault();
             const formEl = event.current.Target.elements;
             const mail = formEl.email.value;
             const password = formEl.password.value;
