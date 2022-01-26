@@ -1,13 +1,16 @@
-const input = document.querySelector('.js-intut');
-input.addEventListener('input', onInputChange);
+
+
+const emailEl = document.querySelector(`#email`);
+const passwordEl = document.querySelector(`#password`);
+
 function onInputChange(event) {
-    console.log(event.currentTarget.value);
-    const changeInput = event.currentTarget.value;
+    const { elements: { email, password }, } = event.currentTarget;
+    return event.currentTarget !== ``,
+        "Все поля должны быть заполнены!"
 }
-if (changeInput="") {console.log("Все поля должны быть заполнены!"); }
-    else {
-        const form = document.querySelector('.js-register-form');
-        form.addEventListener('submit', onFormSubmit);
+
+        const form = document.querySelector(`#login-form`);
+        form.addEventListener(`submit`, onFormSubmit);
         function onFormSubmit(event) {
             event.preventDefault();
             const formEl = event.current.Target.elements;
@@ -19,6 +22,4 @@ if (changeInput="") {console.log("Все поля должны быть запо
             console.log(password);
             console.log(formData);
         }
-    }
-  
- 
+    
